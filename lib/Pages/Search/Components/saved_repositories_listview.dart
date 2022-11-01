@@ -11,9 +11,12 @@ class SavedRepositoriesListview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 20, bottom: 20),
+          padding: const EdgeInsets.only(top: 40),
           child: Text(
             "Saved Repositories",
             textAlign: TextAlign.start,
@@ -41,6 +44,8 @@ class SavedRepositoriesListview extends StatelessWidget {
             flex: 1,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
+              height: 100,
+              width: 100,
               child: SvgPicture.asset(repo.repoAsset),
             ),
           ),
