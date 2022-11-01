@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+            primaryColor: Color(0xff333C52),
             textTheme: TextTheme(
               headline1: GoogleFonts.roboto(
                   color: Color(0xff333C52),
