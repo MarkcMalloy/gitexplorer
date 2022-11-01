@@ -4,6 +4,8 @@ import 'package:gitexplorer/Model/repo.dart';
 import 'package:gitexplorer/Pages/Search/Components/results_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../Repository/show_repository_screen.dart';
+
 class SavedRepositoriesListview extends StatelessWidget {
   final List<Repository> repos;
   const SavedRepositoriesListview({Key? key, required this.repos})
@@ -22,9 +24,22 @@ class SavedRepositoriesListview extends StatelessWidget {
                 itemCount: repos.length,
                 padding: const EdgeInsets.symmetric(vertical: 24),
                 itemBuilder: (context, index) {
-                  return repoListItem(repos[index]);
+                  return InkWell(
+                    onTap: () {
+                      navigateToDetails(context, repos[index]);
+                    },
+                    child: repoListItem(repos[index]),
+                  );
                 }))
       ],
+    );
+  }
+
+  navigateToDetails(BuildContext context, Repository repo) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => ShowRepositoryPage(repo: repo),
+      ),
     );
   }
 
@@ -38,14 +53,16 @@ class SavedRepositoriesListview extends StatelessWidget {
               flex: 1,
               child: Visibility(
                 visible: repo.repoAsset.contains("folder"),
+                replacement: SvgPicture.asset(repo.repoAsset),
                 child: Container(
                   height: 42,
                   width: 42,
-                  padding: EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(color: Color(0xffE9FAFA), borderRadius: BorderRadius.circular(6.0)),
+                  padding: const EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                      color: const Color(0xffE9FAFA),
+                      borderRadius: BorderRadius.circular(6.0)),
                   child: SvgPicture.asset(repo.repoAsset),
                 ),
-                replacement: SvgPicture.asset(repo.repoAsset),
               )),
           Flexible(
             flex: 5,

@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontSize: 16)),
             backgroundColor: Colors.white),
-        home: const SearchRepositoriesScreen());
+        home: const SearchRepositoriesScreen(),
+    );
   }
 }
