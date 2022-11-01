@@ -19,20 +19,7 @@ class NoRepositoryResult extends StatelessWidget {
   Widget emptyAsset() {
     return Container(
       alignment: Alignment.center,
-      height: 60,
-      width: double.infinity,
-      child: Stack(
-        children: [
-          Positioned(
-            top: -6,
-            left: 6,
-            child: SvgPicture.asset("assets/backgroundBox.svg"),
-          ),
-          Positioned(
-            child: SvgPicture.asset("assets/foregroundBox.svg"),
-          )
-        ],
-      ),
+      child: SvgPicture.asset("assets/noRepositoriesIcon.svg")
     );
   }
 
