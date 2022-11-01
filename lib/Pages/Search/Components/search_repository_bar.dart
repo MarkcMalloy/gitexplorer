@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:gitexplorer/Pages/Search/Components/search_icon.dart';
 
 class SearchRepositoriesBar extends StatefulWidget {
-  const SearchRepositoriesBar({Key? key}) : super(key: key);
+  final Function search;
+  const SearchRepositoriesBar({Key? key, required this.search}) : super(key: key);
 
   @override
   State<SearchRepositoriesBar> createState() => _SearchRepositoriesBarState();
 }
 
 class _SearchRepositoriesBarState extends State<SearchRepositoriesBar> {
+  TextEditingController searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,12 +27,17 @@ class _SearchRepositoriesBarState extends State<SearchRepositoriesBar> {
   Widget textField() {
     TextStyle? style = Theme.of(context).textTheme.bodyText2;
     return TextFormField(
-      onChanged: (str) {},
+      onChanged: (str) {
+        if(str.length >= 3){
+          widget.search(searchController.text);
+        }
+      },
       decoration: InputDecoration(
           labelText: 'Search for repository',
           hintStyle: style,
           prefixIcon: const SearchIcon(),
           border: InputBorder.none),
+      controller: searchController ,
     );
   }
 }
