@@ -65,8 +65,8 @@ flutter:
   assets:
     - assets/search_icon.svg
     - assets/noRepositoriesIcon.svg
-    - assets/brownmask.svg
     - assets/folder.svg
+    - assets/brownmask.svg
     - assets/greencroc.svg
   #   - images/a_dot_ham.jpeg
 
