@@ -42,10 +42,8 @@ class SavedRepositoriesListview extends StatelessWidget {
         children: [
           Flexible(
             flex: 1,
-            child: Container(
+            child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              height: 100,
-              width: 100,
               child: SvgPicture.asset(repo.repoAsset),
             ),
           ),

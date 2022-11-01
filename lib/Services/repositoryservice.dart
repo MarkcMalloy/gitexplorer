@@ -13,7 +13,7 @@ class RepositoryService {
         repoDescription: 'A minimalist knowledge base manager'));
     repositories.add(Repository(
         repoName: "schollz / croc",
-        repoAsset: "assets/folder.svg",
+        repoAsset: "assets/greencroc.svg",
         repoDescription: 'Easily and securely send things from one computer'));
     repositories.add(Repository(
         repoName: "onevcat / Kingfisher",
