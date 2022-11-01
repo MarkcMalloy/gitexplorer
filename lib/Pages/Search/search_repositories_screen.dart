@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gitexplorer/Services/apiservice.dart';
+import 'package:gitexplorer/Pages/Search/Components/repository_library_headline.dart';
 
 class SearchRepositoriesScreen extends StatefulWidget {
   const SearchRepositoriesScreen({Key? key}) : super(key: key);
@@ -25,18 +26,8 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          children: [screenHeader()],
+          children: const [RepositoryHeadline()],
         ),
-      ),
-    );
-  }
-
-  Widget screenHeader() {
-    return Padding(
-      padding: EdgeInsets.only(left: 12, top: 12),
-      child: Text(
-        "Repository library",
-        style: Theme.of(context).textTheme.headline1,
       ),
     );
   }
