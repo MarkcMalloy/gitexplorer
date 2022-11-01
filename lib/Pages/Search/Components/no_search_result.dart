@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class NoRepositoryResult extends StatelessWidget {
@@ -6,23 +7,49 @@ class NoRepositoryResult extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [emptyText(), subHeaderText()],
+    return Align(
+      alignment: Alignment.center,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [emptyAsset(), emptyText(), subHeaderText()],
+      ),
+    );
+  }
+
+  Widget emptyAsset() {
+    return Container(
+      alignment: Alignment.center,
+      height: 60,
+      width: double.infinity,
+      child: Stack(
+        children: [
+          Positioned(
+            top: -6,
+            left: 6,
+            child: SvgPicture.asset("assets/backgroundBox.svg"),
+          ),
+          Positioned(
+            child: SvgPicture.asset("assets/foregroundBox.svg"),
+          )
+        ],
+      ),
     );
   }
 
   Widget emptyText() {
-    return Text("A little empty",
-        style: GoogleFonts.roboto(
-            color: Color(0xff333C52),
-            fontSize: 16,
-            fontWeight: FontWeight.w500));
+    return Padding(
+      padding: EdgeInsets.only(bottom: 10, top: 30),
+      child: Text("A little empty",
+          style: GoogleFonts.roboto(
+              color: Color(0xff333C52),
+              fontSize: 16,
+              fontWeight: FontWeight.w500)),
+    );
   }
 
-  Widget subHeaderText(){
-    return Text("Search for a repository and save it as favourite",
+  Widget subHeaderText() {
+    return Text("Search for a repository and\n save it as favourite",
+        textAlign: TextAlign.center,
         style: GoogleFonts.roboto(
             color: Color(0xff999DA8),
             fontSize: 14,

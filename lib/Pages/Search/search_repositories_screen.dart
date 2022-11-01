@@ -31,7 +31,7 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              RepositoryHeadline(),
+              const RepositoryHeadline(),
               SearchRepositoriesBar(search: getSavedRepositories),
               showSearchResult()
             ],
