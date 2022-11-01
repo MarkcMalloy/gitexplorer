@@ -28,9 +28,7 @@ class _SearchRepositoriesBarState extends State<SearchRepositoriesBar> {
     TextStyle? style = Theme.of(context).textTheme.bodyText2;
     return TextFormField(
       onChanged: (str) {
-        if(str.length >= 3){
-          widget.search(searchController.text);
-        }
+        widget.search(searchController.text);
       },
       decoration: InputDecoration(
           labelText: 'Search for repository',

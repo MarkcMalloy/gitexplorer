@@ -20,15 +20,25 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
   bool isLoading = false;
 
   Future<void> getSavedRepositories(String searchStr) async {
-    isLoadingMock(true);
-    var result = await apiService.getRepositoriesFromSearchStr(searchStr);
+    if(searchStr.length < 3){
+      setResult([]);
+    } else {
+      isLoadingMock(true);
+      var result = await apiService.getRepositoriesFromSearchStr(searchStr);
+      setState(() {
+        searchResult = result;
+      });
+      dismissKeyboard();
+      await Future.delayed(const Duration(milliseconds: 100));
+      isLoadingMock(false);
+    }
+
+  }
+
+  setResult(List<Repository> result){
     setState(() {
       searchResult = result;
     });
-
-    dismissKeyboard();
-    await Future.delayed(const Duration(milliseconds: 100));
-    isLoadingMock(false);
   }
 
   isLoadingMock(bool b) {
