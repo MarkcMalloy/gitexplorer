@@ -31,9 +31,19 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const RepositoryHeadline(),
-              SearchRepositoriesBar(search: getSavedRepositories),
-              showSearchResult()
+              Flexible(
+                flex: 1,
+                child: Wrap(
+                  children: [
+                    const RepositoryHeadline(),
+                    SearchRepositoriesBar(search: getSavedRepositories),
+                  ],
+                ),
+              ),
+              Flexible(
+                flex: 5,
+                child: showSearchResult(),
+              )
             ],
           ),
         ),
