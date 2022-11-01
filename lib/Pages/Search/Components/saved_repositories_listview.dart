@@ -16,6 +16,7 @@ class SavedRepositoriesListview extends StatelessWidget {
           padding: const EdgeInsets.only(top: 20, bottom: 20),
           child: Text(
             "Saved Repositories",
+            textAlign: TextAlign.start,
             style: Theme.of(context).textTheme.headline2,
           ),
         ),

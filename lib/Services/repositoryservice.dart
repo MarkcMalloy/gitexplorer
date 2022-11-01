@@ -9,11 +9,11 @@ class RepositoryService {
         repoDescription: 'Githubs official command line tool'));
     repositories.add(Repository(
         repoName: "gnebbia / kb",
-        repoAsset: "assets/brownmask.svg",
+        repoAsset: "assets/folder.svg",
         repoDescription: 'A minimalist knowledge base manager'));
     repositories.add(Repository(
         repoName: "schollz / croc",
-        repoAsset: "assets/greencroc.svg",
+        repoAsset: "assets/folder.svg",
         repoDescription: 'Easily and securely send things from one computer'));
     repositories.add(Repository(
         repoName: "onevcat / Kingfisher",
@@ -24,6 +24,16 @@ class RepositoryService {
         repoAsset: "assets/folder.svg",
         repoDescription:
             'Moby Project - a collaborative project for the co...'));
+    repositories.add(Repository(
+        repoName: "strapi / strapi",
+        repoAsset: "assets/purple.svg",
+        repoDescription:
+        'Open source Node.js Headless CMS to easily bu...'));
+    repositories.add(Repository(
+        repoName: "arturadib/strapdown",
+        repoAsset: "assets/folder.svg",
+        repoDescription:
+        'Instant and elegant Markdown documents in the...'));
     return repositories;
   }
 }
