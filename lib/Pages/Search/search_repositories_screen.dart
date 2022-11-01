@@ -22,8 +22,11 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
   Future<void> getSavedRepositories(String searchStr) async {
     isLoadingMock(true);
     var result = await apiService.getRepositoriesFromSearchStr(searchStr);
-    searchResult.add(Repository(repoName: "GitExplorer", repoAsset: ""));
-    FocusScope.of(context).requestFocus(new FocusNode());
+    setState(() {
+      searchResult = result;
+    });
+
+    dismissKeyboard();
     await Future.delayed(const Duration(milliseconds: 100));
     isLoadingMock(false);
   }
@@ -34,13 +37,17 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
     });
   }
 
+  dismissKeyboard() {
+    FocusScope.of(context).requestFocus(FocusNode());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffffffff),
+      backgroundColor: const Color(0xffffffff),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -53,10 +60,7 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
                   ],
                 ),
               ),
-              Flexible(
-                flex: 5,
-                child: showSearchResult(),
-              )
+              Flexible(flex: 5, child: showSearchResult())
             ],
           ),
         ),
@@ -68,7 +72,7 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
     return Visibility(
       visible: searchResult.isNotEmpty,
       replacement: const NoRepositoryResult(),
-      child: const SavedRepositoriesListView(),
+      child: SavedRepositoriesListview(repos: searchResult),
     );
   }
 }
