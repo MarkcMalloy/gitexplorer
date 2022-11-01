@@ -23,6 +23,8 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
     isLoadingMock(true);
     var result = await apiService.getRepositoriesFromSearchStr(searchStr);
     searchResult.add(Repository(repoName: "GitExplorer", repoAsset: ""));
+    FocusScope.of(context).requestFocus(new FocusNode());
+    await Future.delayed(const Duration(milliseconds: 100));
     isLoadingMock(false);
   }
 
