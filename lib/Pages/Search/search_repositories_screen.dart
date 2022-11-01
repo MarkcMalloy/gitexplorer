@@ -4,6 +4,7 @@ import 'package:gitexplorer/Services/apiservice.dart';
 import 'package:gitexplorer/Pages/Search/Components/repository_library_headline.dart';
 import 'package:gitexplorer/Pages/Search/Components/search_repository_bar.dart';
 import 'package:gitexplorer/Pages/Search/Components/no_search_result.dart';
+import 'package:gitexplorer/Pages/Search/Components/saved_repositories_listview.dart';
 
 class SearchRepositoriesScreen extends StatefulWidget {
   const SearchRepositoriesScreen({Key? key}) : super(key: key);
@@ -16,9 +17,19 @@ class SearchRepositoriesScreen extends StatefulWidget {
 class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
   ApiService apiService = ApiService();
   List<Repository> searchResult = [];
+  bool isLoading = false;
 
   Future<void> getSavedRepositories(String searchStr) async {
-    print("searchstr: ${searchStr}");
+    isLoadingMock(true);
+    var result = await apiService.getRepositoriesFromSearchStr(searchStr);
+    searchResult.add(Repository(repoName: "GitExplorer", repoAsset: ""));
+    isLoadingMock(false);
+  }
+
+  isLoadingMock(bool b) {
+    setState(() {
+      isLoading = b;
+    });
   }
 
   @override
@@ -55,7 +66,7 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
     return Visibility(
       visible: searchResult.isNotEmpty,
       replacement: const NoRepositoryResult(),
-      child: ListView(),
+      child: const SavedRepositoriesListView(),
     );
   }
 }

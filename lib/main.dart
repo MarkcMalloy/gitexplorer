@@ -19,7 +19,11 @@ class MyApp extends StatelessWidget {
                 headline1: GoogleFonts.roboto(
                     color: Color(0xff333C52),
                     fontWeight: FontWeight.w500,
-                    fontSize: 20), // Petrol color from figma
+                    fontSize: 24), // Petrol color from figma
+                headline2: GoogleFonts.roboto(
+                    color: Color(0xff333C52),
+                    fontWeight: FontWeight.w400,
+                    fontSize: 20),
                 bodyText1: GoogleFonts.roboto(
                     color: Color(0xff999DA8),
                     fontWeight: FontWeight.w400,
