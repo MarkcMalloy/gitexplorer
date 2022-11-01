@@ -6,7 +6,7 @@ class RepositoryHeadline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 12, top: 12),
+      padding: EdgeInsets.only(top: 20, bottom: 20),
       child: Text(
         "Repository library",
         style: Theme.of(context).textTheme.headline1,

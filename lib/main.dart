@@ -16,19 +16,18 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             primaryColor: Color(0xff333C52),
             textTheme: TextTheme(
-              headline1: GoogleFonts.roboto(
-                  color: Color(0xff333C52),
-                  fontWeight: FontWeight.w500,
-                  fontSize: 20), // Petrol color from figma
-              bodyText1: GoogleFonts.roboto(
-                  color: Color(0xff999da8),
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14),
-              bodyText2: GoogleFonts.roboto(
-                  color: Color(0xff999DA8),
-                  fontWeight: FontWeight.w400,
-                  fontSize: 16)
-            ),
+                headline1: GoogleFonts.roboto(
+                    color: Color(0xff333C52),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20), // Petrol color from figma
+                bodyText1: GoogleFonts.roboto(
+                    color: Color(0xff999DA8),
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14),
+                bodyText2: GoogleFonts.roboto(
+                    color: Color(0xff999DA8),
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16)),
             backgroundColor: Colors.white),
         home: const SearchRepositoriesScreen());
   }

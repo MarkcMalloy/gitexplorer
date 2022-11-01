@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gitexplorer/Pages/Search/Components/search_icon.dart';
 
 class SearchRepositoriesBar extends StatefulWidget {
   const SearchRepositoriesBar({Key? key}) : super(key: key);
@@ -27,15 +28,8 @@ class _SearchRepositoriesBarState extends State<SearchRepositoriesBar> {
       decoration: InputDecoration(
           labelText: 'Search for repository',
           hintStyle: style,
-          prefixIcon: searchIcon(),
+          prefixIcon: const SearchIcon(),
           border: InputBorder.none),
-    );
-  }
-
-  Widget searchIcon() {
-    return Icon(
-      Icons.search,
-      color: Theme.of(context).primaryColor,
     );
   }
 }

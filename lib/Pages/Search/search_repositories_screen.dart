@@ -27,9 +27,12 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [RepositoryHeadline(), SearchRepositoriesBar()],
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [RepositoryHeadline(), SearchRepositoriesBar()],
+          ),
         ),
       ),
     );
