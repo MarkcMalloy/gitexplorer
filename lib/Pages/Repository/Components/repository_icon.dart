@@ -7,12 +7,10 @@ class RepositoryIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-        onPressed: () {},
-        icon: SizedBox(
-          height: 200,
-          width: 200,
-          child: SvgPicture.asset(asset),
-        ));
+    return SizedBox(
+      height: 100,
+      width: 100,
+      child: SvgPicture.asset(asset!),
+    );
   }
 }
