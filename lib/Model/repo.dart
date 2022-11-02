@@ -1,13 +1,13 @@
 class Repository {
-  late String repoName;
-  late String repoAsset;
-  late String repoDescription;
+  late String name;
+  late String asset;
+  late String description;
 
-  Repository({required this.repoName, required this.repoAsset, required this.repoDescription});
+  Repository({required this.name, required this.asset, required this.description});
 
   Repository.fromJson(Map<String, dynamic> json) {
-    repoName = json['repo_name'];
-    repoAsset = json['repo_asset'];
-    repoDescription = json['repoDescription'];
+    name = json['repo_name'];
+    asset = json['repo_asset'];
+    description = json['repoDescription'];
   }
 }
