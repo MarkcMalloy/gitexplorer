@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gitexplorer/Pages/Repository/Components/repo_org_name.dart';
 import 'package:gitexplorer/Model/repo.dart';
 import 'package:gitexplorer/Pages/Repository/Components/repository_icon.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,7 +19,7 @@ class ShowRepositoryPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const ReturnButton(),
-            RepositoryIcon(asset: repo.repoAsset),
+            RepositoryIcon(asset: repo.asset),
             repoOrgAndName(),
             language()
           ],
@@ -31,13 +31,7 @@ class ShowRepositoryPage extends StatelessWidget {
   Widget repoOrgAndName() {
     return Padding(
         padding: const EdgeInsets.only(top: 14, bottom: 7),
-        child: Text(
-          repo.repoName,
-          style: GoogleFonts.roboto(
-              color: const Color(0xff333C52),
-              fontWeight: FontWeight.w500,
-              fontSize: 20),
-        ));
+        child: RepoName(name: repo.name,));
   }
 
   Widget language(){
