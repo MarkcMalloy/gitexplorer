@@ -52,8 +52,8 @@ class SavedRepositoriesListview extends StatelessWidget {
           Flexible(
               flex: 1,
               child: Visibility(
-                visible: repo.repoAsset.contains("folder"),
-                replacement: SvgPicture.asset(repo.repoAsset),
+                visible: repo.asset.contains("folder"),
+                replacement: SvgPicture.asset(repo.asset),
                 child: Container(
                   height: 42,
                   width: 42,
@@ -61,7 +61,7 @@ class SavedRepositoriesListview extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: const Color(0xffE9FAFA),
                       borderRadius: BorderRadius.circular(6.0)),
-                  child: SvgPicture.asset(repo.repoAsset),
+                  child: SvgPicture.asset(repo.asset),
                 ),
               )),
           Flexible(
@@ -73,7 +73,7 @@ class SavedRepositoriesListview extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    repo.repoName,
+                    repo.name,
                     textAlign: TextAlign.start,
                     style: GoogleFonts.roboto(
                         fontWeight: FontWeight.w500,
@@ -81,7 +81,7 @@ class SavedRepositoriesListview extends StatelessWidget {
                         color: const Color(0xff333C52)),
                   ),
                   Text(
-                    repo.repoDescription,
+                    repo.description,
                     textAlign: TextAlign.start,
                     style: GoogleFonts.roboto(
                         fontWeight: FontWeight.w400,

@@ -8,7 +8,7 @@ class ApiService {
     await Future.delayed(Duration(milliseconds: 350)); // Mocks API Call ping
     var repos = repositoryService.fetchMockRepositories();
     var filteredRepos =
-        repos.where((element) => element.repoName.contains(searchStr)).toList();
+        repos.where((element) => element.name.contains(searchStr)).toList();
     return filteredRepos;
   }
 }
