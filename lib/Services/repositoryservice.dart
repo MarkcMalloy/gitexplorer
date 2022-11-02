@@ -4,35 +4,35 @@ class RepositoryService {
   List<Repository> fetchMockRepositories() {
     List<Repository> repositories = [];
     repositories.add(Repository(
-        repoName: "cli / cli",
-        repoAsset: "assets/folder.svg",
-        repoDescription: 'Githubs official command line tool'));
+        name: "cli / cli",
+        asset: "assets/folder.svg",
+        description: 'Githubs official command line tool'));
     repositories.add(Repository(
-        repoName: "gnebbia / kb",
-        repoAsset: "assets/folder.svg",
-        repoDescription: 'A minimalist knowledge base manager'));
+        name: "gnebbia / kb",
+        asset: "assets/folder.svg",
+        description: 'A minimalist knowledge base manager'));
     repositories.add(Repository(
-        repoName: "schollz / croc",
-        repoAsset: "assets/greencroc.svg",
-        repoDescription: 'Easily and securely send things from one computer'));
+        name: "schollz / croc",
+        asset: "assets/greencroc.svg",
+        description: 'Easily and securely send things from one computer'));
     repositories.add(Repository(
-        repoName: "onevcat / Kingfisher",
-        repoAsset: "assets/folder.svg",
-        repoDescription: 'A lightweight, pure-Swift lbirary for downloading'));
+        name: "onevcat / Kingfisher",
+        asset: "assets/folder.svg",
+        description: 'A lightweight, pure-Swift lbirary for downloading'));
     repositories.add(Repository(
-        repoName: "moby / moby",
-        repoAsset: "assets/folder.svg",
-        repoDescription:
+        name: "moby / moby",
+        asset: "assets/folder.svg",
+        description:
             'Moby Project - a collaborative project for the co...'));
     repositories.add(Repository(
-        repoName: "strapi / strapi",
-        repoAsset: "assets/purple.svg",
-        repoDescription:
+        name: "strapi / strapi",
+        asset: "assets/purple.svg",
+        description:
         'Open source Node.js Headless CMS to easily bu...'));
     repositories.add(Repository(
-        repoName: "arturadib/strapdown",
-        repoAsset: "assets/folder.svg",
-        repoDescription:
+        name: "arturadib/strapdown",
+        asset: "assets/folder.svg",
+        description:
         'Instant and elegant Markdown documents in the...'));
     return repositories;
   }

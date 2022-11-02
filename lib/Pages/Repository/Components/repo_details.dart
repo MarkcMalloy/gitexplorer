@@ -14,7 +14,9 @@ class RepoDetails extends StatelessWidget {
           border: Border.all(width: 1, color: Color(0xffE6E6E6)),
           borderRadius: BorderRadius.circular(6.0)),
       child: Column(
-        children: [],
+        children: [
+
+        ],
       ),
     );
   }
