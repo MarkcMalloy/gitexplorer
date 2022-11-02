@@ -28,7 +28,6 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
       setState(() {
         searchResult = result;
       });
-      dismissKeyboard();
       await Future.delayed(const Duration(milliseconds: 100));
     }
 
@@ -38,10 +37,6 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
     setState(() {
       searchResult = result;
     });
-  }
-
-  dismissKeyboard() {
-    FocusScope.of(context).requestFocus(FocusNode());
   }
 
   @override
