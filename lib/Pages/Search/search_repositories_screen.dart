@@ -19,18 +19,17 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
   List<Repository> searchResult = [];
   bool isLoading = false;
 
+  //getSavedRepos searches ahead if the searchstring is at least 3 characters in length
   Future<void> getSavedRepositories(String searchStr) async {
     if(searchStr.length < 3){
-      setResult([]);
+      setResult([]); //If the searchString falls below 3 characters, the state of searchResult will be cleared
     } else {
-      isLoadingMock(true);
       var result = await apiService.getRepositoriesFromSearchStr(searchStr);
       setState(() {
         searchResult = result;
       });
       dismissKeyboard();
       await Future.delayed(const Duration(milliseconds: 100));
-      isLoadingMock(false);
     }
 
   }
@@ -38,12 +37,6 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
   setResult(List<Repository> result){
     setState(() {
       searchResult = result;
-    });
-  }
-
-  isLoadingMock(bool b) {
-    setState(() {
-      isLoading = b;
     });
   }
 
