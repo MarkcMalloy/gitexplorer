@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gitexplorer/Model/repo.dart';
+import 'package:gitexplorer/Pages/Repository/Components/repository_icon.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'Components/back_button.dart';
@@ -17,8 +18,8 @@ class ShowRepositoryPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            ReturnButton(),
-            repoAsset(),
+            const ReturnButton(),
+            RepositoryIcon(asset: repo.repoAsset),
             repoOrgAndName(),
             language()
           ],
@@ -27,24 +28,14 @@ class ShowRepositoryPage extends StatelessWidget {
     );
   }
 
-  Widget repoAsset() {
-    return IconButton(
-        onPressed: () {},
-        icon: Container(
-          height: 100,
-          width: 100,
-          child: SvgPicture.asset(repo.repoAsset),
-        ));
-  }
-
   Widget repoOrgAndName() {
     return Padding(
-        padding: EdgeInsets.only(top: 14, bottom: 7),
+        padding: const EdgeInsets.only(top: 14, bottom: 7),
         child: Text(
           repo.repoName,
           style: GoogleFonts.roboto(
-              color: Color(0xff333C52),
-              fontWeight: FontWeight.w400,
+              color: const Color(0xff333C52),
+              fontWeight: FontWeight.w500,
               fontSize: 20),
         ));
   }
@@ -55,7 +46,7 @@ class ShowRepositoryPage extends StatelessWidget {
       style: GoogleFonts.roboto(
           color: Color(0xff999DA8),
           fontWeight: FontWeight.w400,
-          fontSize: 14),
+          fontSize: 18),
     );
   }
 }
