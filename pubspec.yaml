@@ -69,6 +69,7 @@ flutter:
     - assets/brownmask.svg
     - assets/greencroc.svg
     - assets/purple.svg
+    - assets/arrow_back.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
