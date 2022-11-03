@@ -1,5 +1,7 @@
 import 'package:gitexplorer/Model/repo.dart';
-
+/*
+This class mocks a list of repositories
+ */
 class RepositoryService {
   List<Repository> fetchMockRepositories() {
     List<Repository> repositories = [];

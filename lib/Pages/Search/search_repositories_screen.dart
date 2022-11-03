@@ -21,19 +21,18 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
 
   //getSavedRepos searches ahead if the searchstring is at least 3 characters in length
   Future<void> getSavedRepositories(String searchStr) async {
-    if(searchStr.length < 3){
-      setResult([]); //If the searchString falls below 3 characters, the state of searchResult will be cleared
+    if (searchStr.length < 3) {
+      setResult(
+          []); //If the searchString falls below 3 characters, the state of searchResult will be cleared
     } else {
       var result = await apiService.getRepositoriesFromSearchStr(searchStr);
       setState(() {
         searchResult = result;
       });
-      await Future.delayed(const Duration(milliseconds: 100));
     }
-
   }
 
-  setResult(List<Repository> result){
+  setResult(List<Repository> result) {
     setState(() {
       searchResult = result;
     });
@@ -50,20 +49,21 @@ class _SearchRepositoriesScreenState extends State<SearchRepositoriesScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Flexible(
-                flex: 1,
-                child: Wrap(
-                  children: [
-                    const RepositoryHeadline(),
-                    SearchRepositoriesBar(search: getSavedRepositories),
-                  ],
-                ),
-              ),
+              Flexible(flex: 1, child: searchBar()),
               Flexible(flex: 5, child: showSearchResult())
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget searchBar() {
+    return Wrap(
+      children: [
+        const RepositoryHeadline(),
+        SearchRepositoriesBar(search: getSavedRepositories),
+      ],
     );
   }
 
