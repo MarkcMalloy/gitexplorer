@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gitexplorer/Pages/Repository/Components/repo_details.dart';
-import 'package:gitexplorer/Pages/Repository/Components/repo_org_name.dart';
+import 'package:gitexplorer/Pages/Components/repo_name.dart';
 import 'package:gitexplorer/Model/repo.dart';
 import 'package:gitexplorer/Pages/Repository/Components/repository_icon.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,10 +23,7 @@ class ShowRepositoryPage extends StatelessWidget {
             RepositoryIcon(asset: repo.asset),
             repoOrgAndName(),
             language(),
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: RepoDetails(),
-            )
+            repoDetails()
           ],
         ),
       ),
@@ -45,7 +42,16 @@ class ShowRepositoryPage extends StatelessWidget {
     return Text(
       "Javascript",
       style: GoogleFonts.roboto(
-          color: Color(0xff999DA8), fontWeight: FontWeight.w400, fontSize: 18),
+          color: const Color(0xff999DA8),
+          fontWeight: FontWeight.w400,
+          fontSize: 18),
+    );
+  }
+
+  Widget repoDetails() {
+    return const Padding(
+      padding: EdgeInsets.all(20),
+      child: RepoDetails(),
     );
   }
 }

@@ -4,7 +4,7 @@ import 'package:gitexplorer/Services/apiservice.dart';
 import 'package:gitexplorer/Pages/Search/Components/repository_library_headline.dart';
 import 'package:gitexplorer/Pages/Search/Components/search_repository_bar.dart';
 import 'package:gitexplorer/Pages/Search/Components/no_search_result.dart';
-import 'package:gitexplorer/Pages/Search/Components/saved_repositories_listview.dart';
+import 'package:gitexplorer/Pages/Search/Components/repositories_listview.dart';
 
 class SearchRepositoriesScreen extends StatefulWidget {
   const SearchRepositoriesScreen({Key? key}) : super(key: key);

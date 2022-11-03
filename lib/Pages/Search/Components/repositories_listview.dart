@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gitexplorer/Model/repo.dart';
+import 'package:gitexplorer/Pages/Components/repo_description.dart';
+import 'package:gitexplorer/Pages/Components/repo_name.dart';
 import 'package:gitexplorer/Pages/Search/Components/results_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -72,22 +74,8 @@ class SavedRepositoriesListview extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    repo.name,
-                    textAlign: TextAlign.start,
-                    style: GoogleFonts.roboto(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: const Color(0xff333C52)),
-                  ),
-                  Text(
-                    repo.description,
-                    textAlign: TextAlign.start,
-                    style: GoogleFonts.roboto(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        color: const Color(0xff999DA8)),
-                  )
+                  RepoName(name: repo.name),
+                  RepoDescription(description: repo.description)
                 ],
               ),
             ),
